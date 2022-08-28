@@ -14,7 +14,6 @@ const Home = () => {
       const data = await response.json();
 
       setCountries(data);
-      //   console.log(countries)
     };
     fetchData();
   }, []);
@@ -40,7 +39,7 @@ const Home = () => {
       <Header/>
       <Grid container justifyContent="center" spacing={2}>
         <Grid item md={6} xs={12}>
-          <Countries courtrylist={countries} addToFav={addToFav} />
+          <Countries countrylist={countries} addToFav={addToFav} />
         </Grid>
         <Grid item md={6} xs={12}>
           <Favourites favourites={favourites} removeFromFav={removeFromFav} />

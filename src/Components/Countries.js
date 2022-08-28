@@ -11,6 +11,7 @@ import {
   TableRow,
   Button,
   Paper,
+  Tooltip,
 } from "@material-ui/core";
 import {green } from "@mui/material/colors";
 
@@ -26,7 +27,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Countries = ({ courtrylist, addToFav }) => {
+const Countries = ({ countrylist, addToFav }) => {
   const classes = useStyles();
 
   return (
@@ -56,7 +57,7 @@ const Countries = ({ courtrylist, addToFav }) => {
         <Table>
           <TableHead>
             <TableBody >
-              {courtrylist.map((country, i) => {
+              {countrylist==""? <p style={{color:"blue" ,marginLeft:250}}>loading...</p>:(countrylist.map((country, i) => {
                 return (
                   <TableHead>
                     <TableRow key={i}>
@@ -70,6 +71,7 @@ const Countries = ({ courtrylist, addToFav }) => {
                         <img src={country.flag} width="120" alt="" />
                       </TableCell>
                       <TableCell>
+                        <Tooltip title="Add to your favourite country">
                         <Button
                           variant="contained"
                           color="primary"
@@ -77,11 +79,14 @@ const Countries = ({ courtrylist, addToFav }) => {
                         >
                           Add
                         </Button>
+                        </Tooltip>
                       </TableCell>
                     </TableRow>
                   </TableHead>
                 );
-              })}
+              }))
+        
+      }
             </TableBody>
           </TableHead>
         </Table>

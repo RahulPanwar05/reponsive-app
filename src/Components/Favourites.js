@@ -11,6 +11,7 @@ import {
   TableRow,
   Paper,
   IconButton,
+  Tooltip,
 } from "@material-ui/core";
 import { green } from "@material-ui/core/colors";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -65,9 +66,11 @@ const Favourites = ({ favourites, removeFromFav }) => {
                     <img src={Country.flag} width="120" alt="" />
                   </TableCell>
                   <TableCell>
+                    <Tooltip title="Delete from your favourite list">
                     <IconButton onClick={() => removeFromFav(Country)}>
                       <DeleteIcon color="secondary" />
                     </IconButton>
+                    </Tooltip>
                   </TableCell>
                 </TableRow>
               );
