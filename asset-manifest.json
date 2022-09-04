@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/reponsive-app/static/css/main.e6c13ad2.css",
+    "main.js": "/reponsive-app/static/js/main.eccaadd7.js",
+    "index.html": "/reponsive-app/index.html",
+    "main.e6c13ad2.css.map": "/reponsive-app/static/css/main.e6c13ad2.css.map",
+    "main.eccaadd7.js.map": "/reponsive-app/static/js/main.eccaadd7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.eccaadd7.js"
+  ]
+}
