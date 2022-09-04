@@ -7,6 +7,7 @@ import Header from "../Components/Header";
 const Home = () => {
   const [countries, setCountries] = useState([]);
   const [favourites, setFavourite] = useState([]);
+  const [search,setSearch]=useState("")
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,14 +33,17 @@ const Home = () => {
     setFavourite(deleteCountry);
   };
 
+  const getData=(n)=>{
+    setSearch(n)
+  }
 
  
   return (
     <div>
-      <Header/>
+      <Header getData={getData}/>
       <Grid container justifyContent="center" spacing={2}>
         <Grid item md={6} xs={12}>
-          <Countries countrylist={countries} addToFav={addToFav} />
+          <Countries countrylist={countries} addToFav={addToFav} search={search} />
         </Grid>
         <Grid item md={6} xs={12}>
           <Favourites favourites={favourites} removeFromFav={removeFromFav} />

@@ -8,7 +8,6 @@ import {
   Box,
   makeStyles,
 } from "@material-ui/core";
-import { borderRadius, padding } from "@mui/system";
 
 const useStyles =makeStyles(theme=>({
 search:{
@@ -32,13 +31,20 @@ title:{
 
 }}))
 
-const Header = () => {
+const Header = ({getData}) => {
 const classes=useStyles()
 const [query,setQuery]=useState("")
 
 const changeHandler=(e)=>{
 setQuery(e.target.value)
+console.log(query)
+getData(query)
 }
+
+
+
+
+
   return (
     <div>
       <Box sx={{ flexGrow: 1 }}>
